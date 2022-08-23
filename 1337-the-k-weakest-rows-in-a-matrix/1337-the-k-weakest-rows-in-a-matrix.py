@@ -1,19 +1,20 @@
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
-
-        temp = []
-
-        for i, v in enumerate(mat):
-            cnt = 0
-            cnt2=0
-            for n in v:
-                if n == 1:
-                    cnt +=1
-            temp.append((cnt,i))
-        temp = sorted(temp)
-        index = []
-
-        for i in range(k):
-            index.append(temp[i][1])
+        #To understand the approach better let us use the same example for better understanding. Count the number of ones in each row. 
+        ones = []
+        indexs = []
         
-        return index
+        for index , val in enumerate(mat):
+            cnt = 0
+            for v in val:
+                if v == 1:
+                    cnt +=1
+            
+            ones.append((cnt,index))
+        print(ones)
+        ones = sorted(ones)
+        
+        for i in range(k):
+            indexs.append(ones[i][1])
+        
+        return indexs
