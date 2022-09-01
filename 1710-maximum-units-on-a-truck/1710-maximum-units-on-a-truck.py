@@ -8,5 +8,6 @@ class Solution:
                 boxes += box * units
             else:
                 boxes += truckSize * units
-                return boxes
+                truckSize = 0
+                #return boxes
         return boxes
