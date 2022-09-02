@@ -12,14 +12,14 @@ class Solution:
             
             if max_left <= max_right:
                 left +=1
-                if max_left - height[left] >0:
-                    res +=max_left - height[left]
                 max_left = max(max_left ,height[left] )
+                res +=max_left - height[left]
+                
             else:
                 high -=1
-                if max_right - height[high] >0:
-                    res +=  max_right - height[high]
                 max_right = max(max_right ,height[high] )
+                res +=  max_right - height[high]
+                
         
         return res
                 
